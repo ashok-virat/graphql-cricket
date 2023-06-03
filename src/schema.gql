@@ -1,0 +1,43 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type CreatePlayerResponse {
+  id: String!
+  name: String!
+  number: Int!
+  batingPosititon: String
+  bowlingType: String
+  country: String!
+  age: Int!
+}
+
+type Query {
+  cricketers: [CreatePlayerResponse!]!
+  getPlayer(id: String!): CreatePlayerResponse!
+}
+
+type Mutation {
+  createCricketer(userInput: CreatePlayerInput!): CreatePlayerResponse!
+  deleteCricketer(id: String!): Boolean!
+  editCricketer(userInput: EditPlayerInput!): CreatePlayerResponse!
+}
+
+input CreatePlayerInput {
+  name: String!
+  number: Int!
+  batingPosititon: String
+  bowlingType: String
+  country: String!
+  age: Int!
+}
+
+input EditPlayerInput {
+  id: String!
+  name: String
+  number: Float
+  batingPosititon: String
+  bowlingType: String
+  country: String
+  age: Float
+}
